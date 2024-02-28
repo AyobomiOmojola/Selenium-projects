@@ -1,0 +1,22 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
+auto_fix = webdriver.ChromeOptions()
+auto_fix.add_experimental_option('detach', True)
+driver = webdriver.Chrome(auto_fix)
+driver.get("https://opensource-demo.orangehrmlive.com/")
+WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//input[@name='username']"))).send_keys("Admin")
+driver.find_element(By.XPATH, "//input[@name='password']").send_keys("admin123")
+driver.find_element(By.TAG_NAME, "button").click()
+
+act_title = driver.title
+exp_title = "OrangeHRM"
+
+if act_title == exp_title:
+    print('Login Test Passed')
+else:
+    print('Login Test Failed')
+
+driver.close()
