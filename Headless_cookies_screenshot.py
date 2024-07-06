@@ -33,3 +33,8 @@ cookies = driver.get_cookies()
 print("Prize of cookies after deleted one:", len(cookies))
 
     # driver.quit()
+
+# driver.add_cookes({'name':'name', 'value':'value'})
+# driver.delete_cookie("name")
+# cookies = driver.get_cookies()
+print('Size of cookies: ', cookies)

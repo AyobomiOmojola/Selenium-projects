@@ -19,7 +19,7 @@ for checkbox in checkboxes:
 
 # Selecting checkboxes of choice:
 for checkbox in checkboxes:
-    weekname = checkbox.get_attribute('id')
+    weekname = checkbox.get_attribute('id') ### get checkbox of choice with attribute ###
     if weekname == 'monday' or weekname == 'wednesday':
         checkbox.click()
 
@@ -60,6 +60,8 @@ print('Number of broken links: ', count)
 # This is identified by the HTML tag called select
 drp_list = driver.find_element(By.XPATH, "//input[@class='heyo']")
 drop_lists = Select(drp_list) # Declare as a Select selenium object
+
+# Remember alert and dropdown are similiar
 
 drop_lists.select_by_visible_text('money')
 drop_lists.select_by_value('money')

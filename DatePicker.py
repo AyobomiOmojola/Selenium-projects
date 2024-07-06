@@ -53,11 +53,11 @@ driver.implicitly_wait(10)
 #     else:
 #         driver.find_element(By.XPATH, "//a[@data-handler='next']").click() #next arrow
 
-##### Shorter Logic
+#### Shorter Logic
 # while True:
 #     mon = driver.find_element(By.XPATH, "//span[@class='ui-datepicker-month']").text
 #     yr = driver.find_element(By.XPATH, "//span[@class='ui-datepicker-year']").text
-#
+
 #     if month == mon and year == yr:
 #         days = driver.find_elements(By.XPATH, "//table[@class='ui-datepicker-calendar']/tbody/tr/td/a")
 #         for day in days:

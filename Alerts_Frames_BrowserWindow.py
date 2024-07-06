@@ -32,7 +32,7 @@ driver = webdriver.Chrome(auto_fix)
 # This is used when there is an authentication pop up on a website, you simply inject the username and password into the url
 # driver.get("https://admin:admin@the-internet.herokuapp.com/basic_auth")
 
-##### iFrames #######
+#### iFrames #######
 # identified by : frame, iframe, form
 # driver.switch_to.frame(name of the frame)
 # driver.switch_to.frame(id of the frame)
@@ -43,17 +43,17 @@ driver = webdriver.Chrome(auto_fix)
 # NOTE: always use # driver.switch_to.default_content() to leave a frame to the main page
 
 # To demonstrate how to switch between frames:
-# driver.switch_to.frame("frame_1") # Switch to first frame by its name
-# driver.find_element(By.LINK_TEXT, "heyo").click() # access the element in such frame
-# driver.switch_to.default_content() # Switch out to the main webpage area
-#
-# driver.switch_to.frame("frame_2") # Switch to first frame
-# driver.find_element(By.LINK_TEXT, "hiya").click() # access the element in such frame
-# driver.switch_to.default_content() # Switch out to the main webpage area
-#
-# driver.switch_to.frame("frame_3") # Switch to first frame
-# driver.find_element(By.LINK_TEXT, "hello").click() # access the element in such frame
-# driver.switch_to.default_content() # Switch out to the main webpage area
+driver.switch_to.frame("frame_1") # Switch to first frame by its name
+driver.find_element(By.LINK_TEXT, "heyo").click() # access the element in such frame
+driver.switch_to.default_content() # Switch out to the main webpage area
+
+driver.switch_to.frame("frame_2") # Switch to second frame
+driver.find_element(By.LINK_TEXT, "hiya").click() # access the element in such frame
+driver.switch_to.default_content() # Switch out to the main webpage area
+
+driver.switch_to.frame("frame_3") # Switch to third frame
+driver.find_element(By.LINK_TEXT, "hello").click() # access the element in such frame
+driver.switch_to.default_content() # Switch out to the main webpage area
 
 # To demonstrate how to switch to innerframes in a frame
 driver.get("https://demo.automationtesting.in/Frames.html")
@@ -91,7 +91,7 @@ for wind in ids:
 
 # to close a specific window id
 for wind in ids:
-    driver.switch_to.window(wind)
+    driver.switch_to.window(wind) ### hence identify window by the title of the page ###
     if driver.title == 'hellohello':
         driver.close() # Note you have to switch to the window you wish to close
 

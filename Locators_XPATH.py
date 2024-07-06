@@ -14,7 +14,7 @@ driver.get("https://opensource-demo.orangehrmlive.com/")
 ## Types: Absolute & Relative
 ## Absolute Xpath starts with / while Relative starts with //
 ## Avsolute starts from root html node while Relative jumps to element on DOM
-## Absolute uses node while Relative uses attributes
+## Absolute uses nodes while Relative uses attributes
 
 #relative_xpath = //tagname[@attributes='value']
 #relative_xpath = //tagname[@attributes='value']/div/h1

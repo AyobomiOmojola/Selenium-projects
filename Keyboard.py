@@ -21,6 +21,7 @@ input1.send_keys("welcome to selenium")
 
 # Ctrl A: To select text from input box 1
 act = ActionChains(driver)
+act.double_click(input1).perform()
 act.key_down(Keys.CONTROL).send_keys("a").key_up(Keys.CONTROL).perform()
 
 # Ctrl C: To copy text from input box 1
